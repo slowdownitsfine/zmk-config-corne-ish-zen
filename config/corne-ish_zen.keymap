@@ -28,10 +28,10 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |                            |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | nav | mda | SPC |                            | ENT | sym | num |
                         bindings = <
-   &kp TAB   &kp Q &kp W       &kp E      &kp R      &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp GRAVE &kp A &mt LCTRL S &mt LALT D &mt LCMD F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X       &kp C      &kp V      &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                               &mo nav    &mo mda    &kp SPACE       &kp RET &mo sym &mo num
+   &kp TAB   &kp Q &kp W       &kp E      &kp R      &kp T           &kp Y   &kp U       &kp I       &kp O        &kp P    &kp BSPC
+   &kp GRAVE &kp A &mt LCTRL S &mt LALT D &mt LGUI F &kp G           &kp H   &mt RGUI J  &mt RALT K  &mt RCTRL L  &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X       &kp C      &kp V      &kp B           &kp N   &kp M       &kp COMMA   &kp DOT      &kp FSLH &kp ESC
+                               &mo nav    &mo mda    &kp SPACE       &kp RET &mo sym     &mo num
                         >;
                 };
 
@@ -44,7 +44,7 @@
 //                    |     |     |     |                            |  C_PP  |  K_MUTE  |          |
                         bindings = <
    &kp TAB  &trans  &trans     &trans    &trans       &trans         &trans    &trans      &trans        &trans        &trans      &trans
-   &trans   &trans  &kp LCTRL  &kp LALT  &kp LCMD     &trans         &trans    &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &trans
+   &trans   &trans  &kp LCTRL  &kp LALT  &kp LGUI     &trans         &trans    &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &trans
    &trans   &trans  &trans     &trans    &trans       &trans         &trans    &trans      &trans        &trans        &trans      &trans
                                &trans    &trans       &trans         &kp C_PP  &kp K_MUTE  &trans
                         >;
@@ -59,9 +59,24 @@
 //                    |     |     |     |                            |   RET   |   BSPC   |   DEL   |
                         bindings = <
    &kp TAB  &trans  &trans     &trans    &trans    &trans            &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &trans
-   &trans   &trans  &kp LCTRL  &kp LALT  &kp LCMD  &trans            &kp CAPS       &kp LEFT        &kp DOWN       &kp UP        &kp RIGHT      &trans
+   &trans   &trans  &kp LCTRL  &kp LALT  &kp LGUI  &trans            &kp CAPS       &kp LEFT        &kp DOWN       &kp UP        &kp RIGHT      &trans
    &trans   &trans  &trans     &trans    &trans    &trans            &kp INSERT     &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END        &trans
                                &trans    &trans    &trans            &kp RET        &kp BSPC        &kp DEL
+                        >;
+                };
+
+                sym {
+                        label = "sym";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  !  |  @  |  -  |  {  |  }  |                            |     |     |     |     |     |      |
+// |  `   |  ^  |  &  |  \  |  <  |  >  |                            |     |     |     |     |     |      |
+// | SHFT |  %  |  #  | "|" |  [  |  ]  |                            |     |     |     |     |     |      |
+//                    |     |  (  |  )  |                            |     |     |     |
+                        bindings = <
+   &kp TAB    &kp EXCL   &kp AT    &kp MINUS  &kp LBRC  &kp RBRC     &trans &trans &trans &trans &trans &kp BSPC
+   &kp GRAVE  &kp CARET  &kp AMPS  &kp BSLH   &kp LT    &kp GT       &trans &trans &trans &trans &trans &trans
+   &kp LSHFT  &kp PRCNT  &kp HASH  &kp PIPE   &kp LBKT  &kp RBKT     &trans &trans &trans &trans &trans &trans
+                         &trans    &kp LPAR   &kp RPAR               &trans &trans &trans
                         >;
                 };
 
@@ -80,19 +95,5 @@
                         >;
                 };
 
-                sym {
-                        label = "sym";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  -  |  {  |  }  |                            |     |     |     |     |     |      |
-// |  `   |  ^  |  &  |  \  |  <  |  >  |                            |     |     |     |     |     |      |
-// | SHFT |  %  |  #  | "|" |  [  |  ]  |                            |     |     |     |     |     |      |
-//                    |     |  (  |  )  |                            |     |     |     |
-                        bindings = <
-   &kp TAB    &kp EXCL   &kp AT    &kp MINUS  &kp LBRC  &kp RBRC     &trans &trans &trans &trans &trans &kp BSPC
-   &kp GRAVE  &kp CARET  &kp AMPS  &kp BSLH   &kp LT    &kp GT       &trans &trans &trans &trans &trans &trans
-   &kp LSHFT  &kp PRCNT  &kp HASH  &kp PIPE   &kp LBKT  &kp RBKT     &trans &trans &trans &trans &trans &trans
-                         &trans    &kp LPAR   &kp RPAR               &trans &trans &trans
-                        >;
-                };
         };
 };      
