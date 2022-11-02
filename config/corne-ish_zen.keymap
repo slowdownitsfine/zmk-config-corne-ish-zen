@@ -15,15 +15,15 @@
     flavor = "tap-preferred";
 };
 
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <5>;
-        };
-    };
-};
+// / {
+//     conditional_layers {
+//         compatible = "zmk,conditional-layers";
+//         tri_layer {
+//             if-layers = <1 2>;
+//             then-layer = <5>;
+//         };
+//     };
+// };
 
 // layers
 #define zro 0
